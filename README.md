@@ -1,7 +1,7 @@
 # fm
 FM is a mobile application that is created with two friends Frank And Mike , the v1 application is a basic application to help 
-in keeping transactions of a sacco and also allow for loan disbursment records of people within the saccoo
-A new Flutter application.
+in keeping transactions of a sacco and also allow for loan disbursment records of people within the saccoo.
+
 
 ## Getting Started
 
