@@ -3,17 +3,22 @@ import 'package:fm/screens/Payments.dart';
 import 'package:fm/screens/home_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'home_widget.dart';
+import 'package:flutter/services.dart';
+
+import 'loans/my_loan.dart';
+
 class ClientHome extends StatefulWidget {
   @override
   _ClientHomeState createState() => _ClientHomeState();
 }
 
 class _ClientHomeState extends State<ClientHome> {
+
   int _currentIndex = 0;
   final List<Widget> _children = [
     HomeWidget(),
     Payments(),
-    HomeWidget(),
+    MyLoan(),
     HomeWidget(),
     HomeWidget(),
   ];
@@ -34,13 +39,6 @@ class _ClientHomeState extends State<ClientHome> {
                 tooltip: 'FAQ',
                 onPressed: (){}
                 ),
-            IconButton(
-              icon: const Icon(Icons.person),
-              tooltip: 'Profile',
-              onPressed: () {
-
-              },
-            ),
           ],
         ),
 

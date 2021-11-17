@@ -3,6 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:fm/screens/ConfirmDetails.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class DepositAmount extends StatelessWidget {
+  var _formKey = GlobalKey<FormState>();
+  String amountErr;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,23 +45,33 @@ class DepositAmount extends StatelessWidget {
                       color: Colors.cyan[600],
                     )
                 ),
-                TextFormField(
-                  textAlign: TextAlign.center,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    suffixText: "Ksh.s",
-                    border: UnderlineInputBorder(),
+                Form(
+                  key: _formKey,
+                  child: TextFormField(
+                    validator: (String amount){
+                      if(amount.length < 1){
+                        // ignore: missing_return
+                        return  "Enter amount for that 10";
+                      }else{
+                        return null;
+                      }
+                    },
+                    textAlign: TextAlign.center,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      suffixText: "Ksh.s",
+                      border: UnderlineInputBorder(),
+                    ),
                   ),
                 )
               ],
             ),
             Container(
               margin: EdgeInsets.only(bottom: 15),
+              // ignore: deprecated_member_use
               child: RaisedButton(
                 onPressed:(){
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ConfirmDetails())
-                  );
+
                 },
                 color: Colors.cyan[600],
                 shape: RoundedRectangleBorder(

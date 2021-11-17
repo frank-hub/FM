@@ -132,7 +132,6 @@ class _ConfirmDetailsState extends State<ConfirmDetails> {
                     ),
                   ),
                 ),
-
               ],
             )
           ],

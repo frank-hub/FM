@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fm/screens/deposit_amount.dart';
@@ -12,6 +13,12 @@ class _PaymentsState extends State<Payments> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => FirebaseFirestore.instance
+          .collection('testing')
+          .add({'timestamp':Timestamp.fromDate(DateTime.now()),'name':Timestamp.fromDate(DateTime.now())}),
+          child: FaIcon(FontAwesomeIcons.plusCircle),
+        ),
         body: Container(
           padding: EdgeInsets.all(10),
           margin: EdgeInsets.fromLTRB(10, 10, 10, 0),

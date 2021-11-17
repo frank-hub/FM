@@ -33,7 +33,7 @@ class HomeWidget extends StatelessWidget {
                         color: Color(0xFF122D42),
                       ),
                     ),
-                    Text('Ksh  300',
+                    Text('Ksh  3080',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
